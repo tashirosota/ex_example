@@ -1,8 +1,10 @@
 defmodule ExExampleWeb.AreasController do
   use ExExampleWeb, :controller
+  alias ExExample.Repo
+  alias ExExample.Area
 
   def index(conn, _params) do
-    areas = ExExample.Repo.all(ExExample.Area)
+    areas = Repo.all(Area)
 
     json(
       conn,
